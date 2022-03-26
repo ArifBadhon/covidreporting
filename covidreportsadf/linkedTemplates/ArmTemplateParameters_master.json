@@ -5,10 +5,10 @@
 		"factoryName": {
 			"value": "covidreportsadf"
 		},
-		"ls_toblobStorage_connectionString": {
+		"ls_toDataLakeStorage_accountKey": {
 			"value": ""
 		},
-		"ls_toDataLakeStorage_accountKey": {
+		"ls_toblobStorage_connectionString": {
 			"value": ""
 		},
 		"ls_toDataLakeStorage_properties_typeProperties_url": {
