@@ -1,0 +1,24 @@
+{
+	"name": "ds_populationraw",
+	"properties": {
+		"description": "Raw Data Set of Population",
+		"linkedServiceName": {
+			"referenceName": "ls_toblobStorage",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "population_by_age.tsv",
+				"container": "getdata"
+			},
+			"columnDelimiter": "\t",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}
