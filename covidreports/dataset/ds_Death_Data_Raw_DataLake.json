@@ -1,0 +1,25 @@
+{
+	"name": "ds_Death_Data_Raw_DataLake",
+	"properties": {
+		"description": "Data Set for Death Cases in Data Lake",
+		"linkedServiceName": {
+			"referenceName": "ls_toDataLakeStorage",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "cases_death_csv",
+				"folderPath": "ecdc",
+				"fileSystem": "rawdata"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}

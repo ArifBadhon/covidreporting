@@ -1,0 +1,23 @@
+{
+	"name": "ds_raw_death_data_from_http",
+	"properties": {
+		"description": "Data Set for Raw Death Data from ECDC site",
+		"linkedServiceName": {
+			"referenceName": "ls_get_DeathData_FromhttpToBlob",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "HttpServerLocation",
+				"relativeUrl": "publications-data/data-national-14-day-notification-rate-covid-19"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}
