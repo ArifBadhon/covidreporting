@@ -16,6 +16,9 @@
 		},
 		"triggerDeleteFileAfterLoad_properties_typeProperties_scope": {
 			"value": "/subscriptions/a14e2543-6019-4b2a-9858-2d8360ae5eed/resourceGroups/CovidReportingRG/providers/Microsoft.Storage/storageAccounts/covidreportblob1"
+		},
+		"ls_get_DeathData_FromhttpToBlob_properties_typeProperties_url": {
+			"value": "https://www.ecdc.europa.eu/en"
 		}
 	}
 }
