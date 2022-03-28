@@ -18,6 +18,10 @@
 		"ls_toDataLakeStorage_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://covidreportsl.dfs.core.windows.net"
+		},
+		"triggerDeleteFileAfterLoad_properties_typeProperties_scope": {
+			"type": "string",
+			"defaultValue": "/subscriptions/a14e2543-6019-4b2a-9858-2d8360ae5eed/resourceGroups/CovidReportingRG/providers/Microsoft.Storage/storageAccounts/covidreportblob1"
 		}
 	},
 	"variables": {
@@ -173,6 +177,7 @@
 							],
 							"storeSettings": {
 								"type": "AzureBlobStorageReadSettings",
+								"recursive": true,
 								"enablePartitionDiscovery": false
 							},
 							"formatSettings": {
@@ -329,6 +334,37 @@
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/datasets/ds_populationraw')]",
 				"[concat(variables('factoryId'), '/datasets/ds_todatalake')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/triggerDeleteFileAfterLoad')]",
+			"type": "Microsoft.DataFactory/factories/triggers",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"description": "Trigger for delete file after load in lake",
+				"annotations": [],
+				"runtimeState": "Started",
+				"pipelines": [
+					{
+						"pipelineReference": {
+							"referenceName": "pl_getpopulationdata",
+							"type": "PipelineReference"
+						},
+						"parameters": {}
+					}
+				],
+				"type": "BlobEventsTrigger",
+				"typeProperties": {
+					"blobPathBeginsWith": "/getdata/blobs/population_by_age.tsv",
+					"ignoreEmptyBlobs": true,
+					"scope": "[parameters('triggerDeleteFileAfterLoad_properties_typeProperties_scope')]",
+					"events": [
+						"Microsoft.Storage.BlobCreated"
+					]
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/pipelines/pl_getpopulationdata')]"
 			]
 		}
 	]

@@ -19,6 +19,10 @@
 			"type": "string",
 			"defaultValue": "https://covidreportsl.dfs.core.windows.net"
 		},
+		"triggerDeleteFileAfterLoad_properties_typeProperties_scope": {
+			"type": "string",
+			"defaultValue": "/subscriptions/a14e2543-6019-4b2a-9858-2d8360ae5eed/resourceGroups/CovidReportingRG/providers/Microsoft.Storage/storageAccounts/covidreportblob1"
+		},
 		"containerUri": {
 			"type": "string",
 			"metadata": "URI to storage account containing linked ARM templates"
@@ -54,6 +58,9 @@
 					},
 					"ls_toDataLakeStorage_properties_typeProperties_url": {
 						"value": "[parameters('ls_toDataLakeStorage_properties_typeProperties_url')]"
+					},
+					"triggerDeleteFileAfterLoad_properties_typeProperties_scope": {
+						"value": "[parameters('triggerDeleteFileAfterLoad_properties_typeProperties_scope')]"
 					}
 				}
 			},
