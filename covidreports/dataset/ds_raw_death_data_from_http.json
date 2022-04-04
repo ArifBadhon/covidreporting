@@ -11,7 +11,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "HttpServerLocation",
-				"relativeUrl": "publications-data/data-national-14-day-notification-rate-covid-19"
+				"relativeUrl": "covid19/nationalcasedeath_eueea_daily_ei/csv/data.csv"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
