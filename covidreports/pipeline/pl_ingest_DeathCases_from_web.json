@@ -4,7 +4,7 @@
 		"description": "Pipeline for inject from web",
 		"activities": [
 			{
-				"name": "Copy Data From Web",
+				"name": "Copy Daily Death Data From Web",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
