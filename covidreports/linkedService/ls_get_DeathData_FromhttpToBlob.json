@@ -1,7 +1,7 @@
 {
 	"name": "ls_get_DeathData_FromhttpToBlob",
 	"properties": {
-		"description": "Link for Get Data From the Web ",
+		"description": "Link for Get Data From the ECDC Website ",
 		"annotations": [],
 		"type": "HttpServer",
 		"typeProperties": {
