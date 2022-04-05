@@ -1,7 +1,7 @@
 {
-	"name": "pl_ingest_DeathCases_from_web",
+	"name": "pl_ingest_ECDC_Data",
 	"properties": {
-		"description": "Pipeline for inject from web",
+		"description": "Pipeline for inject data from ECDC website\n(From 4 data sources with JSON)",
 		"activities": [
 			{
 				"name": "Lookup_json",
@@ -112,7 +112,13 @@
 							"outputs": [
 								{
 									"referenceName": "ds_Death_Data_Raw_DataLake",
-									"type": "DatasetReference"
+									"type": "DatasetReference",
+									"parameters": {
+										"sinkFileName": {
+											"value": "@item().sinkFileName",
+											"type": "Expression"
+										}
+									}
 								}
 							]
 						}
