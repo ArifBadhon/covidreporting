@@ -6,6 +6,11 @@
 			"referenceName": "ls_get_DeathData_FromhttpToBlob",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"sourceRelativeURL": {
+				"type": "string"
+			}
+		},
 		"annotations": [],
 		"type": "DelimitedText",
 		"typeProperties": {

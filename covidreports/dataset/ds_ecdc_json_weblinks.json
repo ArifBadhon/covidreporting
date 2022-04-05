@@ -6,11 +6,6 @@
 			"referenceName": "ls_toblobStorage",
 			"type": "LinkedServiceReference"
 		},
-		"parameters": {
-			"sourceRelativeURL": {
-				"type": "string"
-			}
-		},
 		"annotations": [],
 		"type": "Json",
 		"typeProperties": {
