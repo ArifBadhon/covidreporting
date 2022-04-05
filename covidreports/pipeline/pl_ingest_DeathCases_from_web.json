@@ -36,6 +36,7 @@
 			},
 			{
 				"name": "execute copy",
+				"description": "execute copy from ecdc web links",
 				"type": "ForEach",
 				"dependsOn": [
 					{
@@ -99,7 +100,13 @@
 							"inputs": [
 								{
 									"referenceName": "ds_raw_death_data_from_http",
-									"type": "DatasetReference"
+									"type": "DatasetReference",
+									"parameters": {
+										"sourceRelativeURL": {
+											"value": "@item().sourceRelativeURL",
+											"type": "Expression"
+										}
+									}
 								}
 							],
 							"outputs": [
