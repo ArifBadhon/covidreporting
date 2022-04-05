@@ -1,0 +1,30 @@
+{
+	"name": "ds_ecdc_json_weblinks",
+	"properties": {
+		"description": "Data Set ECDC Web links from JSON",
+		"linkedServiceName": {
+			"referenceName": "ls_toblobStorage",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "ecdc.json",
+				"container": "configs"
+			}
+		},
+		"schema": {
+			"type": "object",
+			"properties": {
+				"sourceRelativeURL": {
+					"type": "string"
+				},
+				"sinkFileName": {
+					"type": "string"
+				}
+			}
+		}
+	}
+}
