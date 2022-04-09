@@ -18,7 +18,15 @@
 				"frequency": "Day",
 				"interval": 1,
 				"startTime": "2022-04-09T18:54:00Z",
-				"timeZone": "UTC"
+				"timeZone": "UTC",
+				"schedule": {
+					"minutes": [
+						6
+					],
+					"hours": [
+						19
+					]
+				}
 			}
 		}
 	}
