@@ -725,6 +725,38 @@
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/datasets/ds_ecdc_json_weblinks')]"
 			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/tr_Ingest_ECDC_data')]",
+			"type": "Microsoft.DataFactory/factories/triggers",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"description": "Ingest ECDC data",
+				"annotations": [],
+				"runtimeState": "Started",
+				"pipelines": [
+					{
+						"pipelineReference": {
+							"referenceName": "pl_ingest_ECDC_Data",
+							"type": "PipelineReference"
+						},
+						"parameters": {}
+					}
+				],
+				"type": "ScheduleTrigger",
+				"typeProperties": {
+					"recurrence": {
+						"frequency": "Day",
+						"interval": 1,
+						"startTime": "2022-04-09T18:54:00Z",
+						"timeZone": "UTC",
+						"schedule": {}
+					}
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/pipelines/pl_ingest_ECDC_Data')]"
+			]
 		}
 	]
 }
